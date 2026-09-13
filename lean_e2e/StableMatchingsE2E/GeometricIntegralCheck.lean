@@ -1,0 +1,9 @@
+import StableMatchingsE2E.GeometricIntegral
+
+open StableMatchingsE2E
+
+#print axioms StableMatchingsE2E.integral_beta_kernel
+#print axioms StableMatchingsE2E.integral_geometric_mass
+#print axioms StableMatchingsE2E.lintegral_geometric_log_term
+#print axioms StableMatchingsE2E.lintegral_tsum_geometric_log_term
+#print axioms StableMatchingsE2E.integral_tsum_geometric_log_term_of_summable

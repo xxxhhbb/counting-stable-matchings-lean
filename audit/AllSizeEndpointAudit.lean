@@ -1,0 +1,10 @@
+import «AllSizeRefinedEndpoint»
+
+open StableMatchingsJointCharging
+
+#check SM_lt_2078_div_625_pow_all_sizes
+#print axioms SM_lt_2078_div_625_pow_all_sizes
+#check fixedFiber_card_lt_2078_div_625_pow
+#print axioms fixedFiber_card_lt_2078_div_625_pow
+#check prescribedFiber_card_lt_2078_div_625_pow
+#print axioms prescribedFiber_card_lt_2078_div_625_pow

@@ -1,0 +1,10 @@
+import StableMatchingsE2E.FinalTheorem
+
+#print axioms StableMatchingsE2E.map_assemblePriority_splitTargetPriorityMeasure
+#print axioms StableMatchingsE2E.lintegral_full_lexTargetMarkerLogNN_lt
+#print axioms StableMatchingsE2E.integral_aggregateLexCost_lt
+#print axioms StableMatchingsE2E.log_stableCount_lt_n_log_seventeen_fifths
+#print axioms StableMatchingsE2E.stableCount_nat_bound_seventeen_fifths
+#print axioms StableMatchingsE2E.SM_nat_bound_seventeen_fifths
+#print axioms StableMatchingsE2E.stableCount_lt_seventeen_fifths_pow
+#print axioms StableMatchingsE2E.SM_lt_seventeen_fifths_pow

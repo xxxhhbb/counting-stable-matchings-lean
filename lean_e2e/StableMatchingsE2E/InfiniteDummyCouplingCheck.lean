@@ -1,0 +1,10 @@
+import StableMatchingsE2E.InfiniteDummyCoupling
+
+open StableMatchingsE2E
+
+#print axioms ae_hasSuccess
+#print axioms firstSuccess_has_geometric_law
+#print axioms infiniteDummyWaitPair_has_geometric_pair_law
+#print axioms map_pairedPrefixVector
+#print axioms map_actualMarkerPair_eq_pairedPrefixVector
+#print axioms ae_markerWindowWidth_prefix_le_geometricWindow

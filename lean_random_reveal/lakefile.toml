@@ -1,0 +1,10 @@
+name = "StableMatchings355RandomReveal"
+version = "0.1.0"
+defaultTargets = ["StableMatchings355RandomReveal"]
+
+[[require]]
+name = "StableMatchings355"
+path = "../lean"
+
+[[lean_lib]]
+name = "StableMatchings355RandomReveal"

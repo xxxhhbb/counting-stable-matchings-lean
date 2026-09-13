@@ -1,0 +1,10 @@
+import StableMatchingsE2E.StableEntropyApplication
+
+open StableMatchingsE2E
+
+#print axioms indexedPartnerSupport_eq_conditionalPartnerSupport
+#print axioms conditionalPartnerSupport_card_le_window
+#print axioms finiteEntropy_imageWeight_eq_log_card_sub_average_log_fiber
+#print axioms log_card_le_revealEntropyBudget
+#print axioms log_stableCount_le_fixedOrder_revealEntropyBudget
+#print axioms exists_fixedOrder_localEntropy_window_bound

@@ -1,0 +1,166 @@
+import StableMatchings355.FullInterval
+
+namespace StableMatchings355
+
+/-!
+# Deterministic random-reveal skeleton
+
+This file deliberately stops before probability theory.  A priority vector is
+an arbitrary vector in a linearly ordered type.  Equal priorities are resolved
+by the canonical `Fin` index, so `Earlier` is a strict total order even before
+one proves that ties have probability zero.  The induced prefix predicate is
+then passed, definitionally, to the existing exact conditional-support bridge.
+-/
+
+/-- Finite priorities for the `n` men.  Natural priorities suffice for an exact
+reveal order; the index tie-break makes repeated values harmless.  A later
+Mathlib layer can map sampled reals to their induced finite ranks. -/
+abbrev PriorityVector (n : Nat) := Fin n -> Nat
+
+/-- Lexicographic priority order, with participant index as deterministic
+tie-breaker. -/
+def Earlier {n : Nat}
+    (priority : PriorityVector n) (p q : Fin n) : Prop :=
+  priority p < priority q \/
+    (priority p = priority q /\ p.val < q.val)
+
+theorem earlier_irrefl {n : Nat}
+    (priority : PriorityVector n) (p : Fin n) :
+    Not (Earlier priority p p) := by
+  intro h
+  rcases h with hlt | heq
+  · exact (Nat.lt_irrefl _ hlt)
+  · exact (Nat.lt_irrefl _ heq.2)
+
+theorem earlier_asymm {n : Nat}
+    (priority : PriorityVector n) {p q : Fin n}
+    (hpq : Earlier priority p q) :
+    Not (Earlier priority q p) := by
+  intro hqp
+  rcases hpq with hpq | hpq <;> rcases hqp with hqp | hqp
+  · exact (Nat.lt_asymm hpq hqp)
+  · omega
+  · omega
+  · exact (Nat.lt_asymm hpq.2 hqp.2)
+
+theorem earlier_trans {n : Nat}
+    (priority : PriorityVector n) {p q r : Fin n}
+    (hpq : Earlier priority p q) (hqr : Earlier priority q r) :
+    Earlier priority p r := by
+  rcases hpq with hpq | hpq <;> rcases hqr with hqr | hqr
+  · exact Or.inl (Nat.lt_trans hpq hqr)
+  · exact Or.inl (by simpa [hqr.1] using hpq)
+  · exact Or.inl (by simpa [hpq.1] using hqr)
+  · exact Or.inr <| And.intro (hpq.1.trans hqr.1) (Nat.lt_trans hpq.2 hqr.2)
+
+/-- The index tie-break makes the priority relation total, without a no-ties
+assumption. -/
+theorem earlier_total {n : Nat}
+    (priority : PriorityVector n) {p q : Fin n} (hne : p ≠ q) :
+    Earlier priority p q \/ Earlier priority q p := by
+  rcases Nat.lt_trichotomy (priority p) (priority q) with hpq | heq | hqp
+  · exact Or.inl (Or.inl hpq)
+  · rcases Nat.lt_trichotomy p.val q.val with hpq | hpq | hqp
+    · exact Or.inl (Or.inr <| And.intro heq hpq)
+    · exact False.elim (hne (Fin.eq_of_val_eq hpq))
+    · exact Or.inr (Or.inr <| And.intro heq.symm hqp)
+  · exact Or.inr (Or.inl hqp)
+
+theorem earlier_trichotomy {n : Nat}
+    (priority : PriorityVector n) (p q : Fin n) :
+    p = q \/ Earlier priority p q \/ Earlier priority q p := by
+  by_cases h : p = q
+  · exact Or.inl h
+  · exact Or.inr (earlier_total priority h)
+
+/-- Men revealed before the target in the deterministic priority order. -/
+def RevealedBefore {n : Nat}
+    (priority : PriorityVector n) (target p : Fin n) : Prop :=
+  Earlier priority p target
+
+theorem target_not_revealed {n : Nat}
+    (priority : PriorityVector n) (target : Fin n) :
+    Not (RevealedBefore priority target target) :=
+  earlier_irrefl priority target
+
+/-- When priority values are injective, the deterministic tie-break branch is
+unreachable and reveal-before is exactly strict comparison of priorities. -/
+theorem earlier_iff_priority_lt_of_injective {n : Nat}
+    (priority : PriorityVector n)
+    (hinjective : Function.Injective priority) (p q : Fin n) :
+    Earlier priority p q <-> priority p < priority q := by
+  constructor
+  · intro h
+    rcases h with hlt | heq
+    · exact hlt
+    · have hpq : p = q := hinjective heq.1
+      subst q
+      exact False.elim (Nat.lt_irrefl _ heq.2)
+  · exact Or.inl
+
+theorem revealedBefore_iff_priority_lt_of_injective {n : Nat}
+    (priority : PriorityVector n)
+    (hinjective : Function.Injective priority) (target p : Fin n) :
+    RevealedBefore priority target p <-> priority p < priority target :=
+  earlier_iff_priority_lt_of_injective priority hinjective p target
+
+/-- Compatibility with the observations available at the target's priority
+prefix.  This is a transparent specialization of the audited `CompatibleOn`.
+-/
+def CompatibleAtPriorityPrefix {n : Nat}
+    (P : Profile (Fin n) (Fin n))
+    (base candidate : Matching (Fin n) (Fin n))
+    (priority : PriorityVector n) (target : Fin n) : Prop :=
+  CompatibleOn P base candidate (RevealedBefore priority target)
+
+theorem compatibleAtPriorityPrefix_iff {n : Nat}
+    (P : Profile (Fin n) (Fin n))
+    (base candidate : Matching (Fin n) (Fin n))
+    (priority : PriorityVector n) (target : Fin n) :
+    CompatibleAtPriorityPrefix P base candidate priority target <->
+      Stable P candidate /\
+        forall p, RevealedBefore priority target p ->
+          candidate.manPartner p = base.manPartner p := by
+  rfl
+
+/-- The exact conditional index support generated by a priority prefix. -/
+abbrev PriorityPrefixIndexSupport {n q : Nat}
+    (P : Profile (Fin n) (Fin n)) {target : Fin n}
+    (E : ExactStablePartnerEnumeration (q := q) P target)
+    (base : Matching (Fin n) (Fin n))
+    (priority : PriorityVector n) :=
+  ExactConditionalIndexSupport P E base (RevealedBefore priority target)
+
+theorem exists_exact_priority_prefix_support {n q : Nat}
+    (P : Profile (Fin n) (Fin n)) {target : Fin n}
+    (E : ExactStablePartnerEnumeration (q := q) P target)
+    (base : Matching (Fin n) (Fin n))
+    (priority : PriorityVector n) :
+    Nonempty (PriorityPrefixIndexSupport P E base priority) :=
+  exists_exactConditionalIndexSupport P E base
+    (RevealedBefore priority target)
+
+/-!
+This deterministic composition lemma makes no independence,
+entropy, or distributional assumption: for every priority vector (including
+ties), the real prefix predicate feeds directly into the exact support-window
+bridge.
+-/
+theorem exists_priority_prefix_full_bridge {n : Nat}
+    (P : Profile (Fin n) (Fin n)) (target : Fin n)
+    (base : Matching (Fin n) (Fin n))
+    (priority : PriorityVector n)
+    (hbase : Stable P base) :
+    Exists fun q =>
+      Exists fun E : ExactStablePartnerEnumeration (q := q) P target =>
+        Exists fun j : Fin q =>
+          base.manPartner target = E.ranked.partner j /\
+          Exists fun W : NearestRevealedWindow E base
+              (RevealedBefore priority target) j =>
+            Exists fun S : PriorityPrefixIndexSupport P E base priority =>
+              S.indices.length <=
+                upperBoundary W.upper - lowerBoundary W.lower := by
+  exact exists_full_conditional_support_bridge P target base
+    (RevealedBefore priority target) hbase
+
+end StableMatchings355

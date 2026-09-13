@@ -1,0 +1,37 @@
+name = "StableMatchingsE2E"
+version = "0.1.0"
+defaultTargets = ["StableMatchingsE2E", "StableMatchingsJointCharging", "StableMatchingsConstantOptimization"]
+
+[[lean_lib]]
+name = "StableMatchingsE2E"
+
+[[lean_lib]]
+name = "StableMatchingsJointCharging"
+srcDir = "../joint_charging"
+globs = ["BinomialEntropyBound", "BoundaryDeletionCore", "BoundaryGraphCounting", "BoundaryMatchingCode", "CanonicalBoundaryBridge", "CanonicalBoundaryGraph", "CanonicalBoundaryMatchingEncoding", "CanonicalChargeAverage", "CanonicalChargeCover", "CanonicalDeletionDoubleCount", "CanonicalDeletionFiber", "CanonicalExtraIntegration", "CanonicalExtraPayment", "CanonicalExtraWitness", "CanonicalGlobalSlack", "CanonicalJointIntegration", "CanonicalLocalPayments", "CanonicalPartnerIndexBridge", "CanonicalPathDecomposition", "CanonicalRotationChain", "CanonicalStrongEndpointTail", "CanonicalTailChargeAverage", "EntropyCertificate", "GlobalChargingAssembly", "ImprovedConstant", "JointSlackLedger", "PriorityEventMass", "RotationFiberCore", "StableLatticeBridge", "StableMatchingsJointCharging"]
+
+[[lean_lib]]
+name = "StableMatchingsConstantOptimization"
+srcDir = "../constant_optimization"
+globs = ["AllSizeRefinedEndpoint", "CanonicalUniformPaymentGlobal", "CanonicalUniformPaymentImprovement", "StableMatchingsConstantOptimization"]
+
+[[require]]
+name = "StableMatchings355"
+path = "../lean"
+
+[[require]]
+name = "StableMatchings355RandomReveal"
+path = "../lean_random_reveal"
+
+[[require]]
+name = "StableMatchingsEntropy"
+path = "../lean_entropy"
+
+[[require]]
+name = "StableMatchingsProbability"
+path = "../lean_probability"
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4.git"
+rev = "905b95818eb32af7874a58b427f50c1711a5e96c"

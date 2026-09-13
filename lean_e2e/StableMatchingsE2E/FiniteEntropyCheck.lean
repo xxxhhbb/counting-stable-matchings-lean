@@ -1,0 +1,10 @@
+import StableMatchingsE2E.FiniteEntropy
+
+open StableMatchingsE2E
+
+#print axioms finiteEntropy_le_log_card_of_pos
+#print axioms finiteEntropy_le_log_positiveSupport_card
+#print axioms finiteEntropy_uniform
+#print axioms finiteEntropy_chain_rule_of_pos
+#print axioms finiteConditionalEntropy_le_expected_log_card
+#print axioms finiteJointEntropy_le_marginal_add_expected_log_card

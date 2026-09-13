@@ -1,0 +1,10 @@
+import StableMatchingsE2E.GeometricDomination
+
+#print axioms StableMatchingsE2E.markerRank_injective
+#print axioms StableMatchingsE2E.markerOwnerOther_injective
+#print axioms StableMatchingsE2E.iIndepFun_actualMarkerBits
+#print axioms StableMatchingsE2E.map_actualMarkerBits
+#print axioms StableMatchingsE2E.exact_support_le_actual_marker_window
+#print axioms StableMatchingsE2E.exact_support_le_dummy_extended_window
+#print axioms StableMatchingsE2E.geometricWindow_real_fiber
+#print axioms StableMatchingsE2E.geometricWindow_zero_fiber

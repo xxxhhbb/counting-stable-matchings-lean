@@ -1,0 +1,27 @@
+import StableMatchings355
+
+#print axioms StableMatchings355.stablePair_sidedness
+#print axioms StableMatchings355.fixedPartner_sameSide
+#print axioms StableMatchings355.revealed_lower_barrier
+#print axioms StableMatchings355.revealed_upper_barrier
+#print axioms StableMatchings355.unitRankedPartners
+#print axioms StableMatchings355.twoRankedPartners_has_strict_step
+#print axioms StableMatchings355.boolProfile_hasMenJoin
+#print axioms StableMatchings355.lower_barrier_nonvacuous_2x2
+#print axioms StableMatchings355.finite_hasMenJoin
+#print axioms StableMatchings355.finite_stablePair_sidedness
+#print axioms StableMatchings355.finite_fixedPartner_sameSide
+#print axioms StableMatchings355.lower_marker_forces_index
+#print axioms StableMatchings355.upper_marker_forces_index
+#print axioms StableMatchings355.compatible_index_in_revealed_window
+#print axioms StableMatchings355.nodup_window_length_le
+#print axioms StableMatchings355.compatible_support_length_le
+#print axioms StableMatchings355.actual_index_in_nearest_window
+#print axioms StableMatchings355.compatible_index_in_nearest_revealed_window
+#print axioms StableMatchings355.nearest_compatible_support_length_le
+#print axioms StableMatchings355.exact_conditional_support_length_le
+#print axioms StableMatchings355.exists_nearestRevealedWindow
+#print axioms StableMatchings355.exists_exactConditionalIndexSupport
+#print axioms StableMatchings355.exists_exact_support_with_nearest_window_bound
+#print axioms StableMatchings355.exists_exactStablePartnerEnumeration
+#print axioms StableMatchings355.exists_full_conditional_support_bridge

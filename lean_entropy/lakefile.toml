@@ -1,0 +1,6 @@
+name = "StableMatchingsEntropy"
+version = "0.1.0"
+defaultTargets = ["StableMatchingsEntropy"]
+
+[[lean_lib]]
+name = "StableMatchingsEntropy"

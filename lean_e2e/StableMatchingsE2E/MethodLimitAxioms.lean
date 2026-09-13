@@ -1,0 +1,5 @@
+import StableMatchingsE2E.MethodLimit
+
+#print axioms StableMatchingsE2E.log_stableCount_le_n_geometricLogSeries_all
+#print axioms StableMatchingsE2E.stableCount_le_exp_geometricLogSeries_pow
+#print axioms StableMatchingsE2E.SM_le_exp_geometricLogSeries_pow

@@ -1,0 +1,6 @@
+name = "StableMatchings355"
+version = "0.1.0"
+defaultTargets = ["StableMatchings355"]
+
+[[lean_lib]]
+name = "StableMatchings355"

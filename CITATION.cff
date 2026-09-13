@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this formalization, please cite this repository."
+title: "Counting Stable Matchings — Lean 4 formalization"
+type: software
+authors:
+  - family-names: Xu
+    given-names: Huibo
+    affiliation: Nanyang Technological University
+repository-code: "https://github.com/xxxhhbb/counting-stable-matchings-lean"
+date-released: 2026-09-13

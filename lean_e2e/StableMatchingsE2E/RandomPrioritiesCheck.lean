@@ -1,0 +1,15 @@
+import StableMatchingsE2E.RandomPriorities
+
+namespace StableMatchingsE2E
+
+#print axioms map_revealIndicator_volume
+#print axioms iIndepFun_fixedThresholdIndicators
+#print axioms map_fixedThresholdIndicators
+#print axioms integral_splitPriority_fubini
+#print axioms measurable_assemblePriority
+#print axioms iIndepFun_targetOtherIndicators
+#print axioms map_targetOtherIndicators
+#print axioms integral_splitTargetPriority_fubini
+#print axioms exists_split_target_priority_full_bridge
+
+end StableMatchingsE2E

@@ -1,0 +1,9 @@
+import StableMatchingsE2E.OptimizedFinalTheorem
+
+#print axioms StableMatchingsE2E.geometricLogSeries_lt_log_1665987_div_500000
+#print axioms StableMatchingsE2E.SM_le_exp_geometricLogSeries_pow
+#print axioms StableMatchingsE2E.log_stableCount_lt_n_log_1665987_div_500000
+#print axioms StableMatchingsE2E.stableCount_nat_bound_1665987_div_500000
+#print axioms StableMatchingsE2E.SM_nat_bound_1665987_div_500000
+#print axioms StableMatchingsE2E.stableCount_lt_1665987_div_500000_pow
+#print axioms StableMatchingsE2E.SM_lt_1665987_div_500000_pow

@@ -1,0 +1,8 @@
+import StableMatchingsE2E.ConstantCertificate
+
+#print axioms StableMatchingsE2E.summable_geometricLogWeight
+#print axioms StableMatchingsE2E.log_one_add_le_cubic
+#print axioms StableMatchingsE2E.hasSum_tailTelescoper
+#print axioms StableMatchingsE2E.geometricLogSeries_eq_abel
+#print axioms StableMatchingsE2E.geometricLogSeries_lt_log_seventeen_div_five
+#print axioms StableMatchingsE2E.integral_tsum_geometric_log_term_lt_log_seventeen_div_five

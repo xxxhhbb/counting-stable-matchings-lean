@@ -1,0 +1,13 @@
+import StableMatchingsEntropy
+
+open StableMatchingsEntropy
+
+#print axioms geometric_waiting_time_convolution_count
+#print axioms geometric_split_constant_weight_sum
+#print axioms geometric_split_trial_counts
+#print axioms finite_geometric_convolution_monomial
+#print axioms finite_marker_window_le_extended
+#print axioms truncatedWait_append_eq_of_marker
+#print axioms conditional_support_interval_bound
+#print axioms conditional_support_le_extended_marker_window
+#print axioms conditional_index_support_le_extended_marker_window

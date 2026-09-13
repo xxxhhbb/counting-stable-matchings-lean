@@ -1,0 +1,9 @@
+import StableMatchingsE2E.EntropyRandomOrder
+
+#print axioms StableMatchingsE2E.priorityOrder_position_lt_iff
+#print axioms StableMatchingsE2E.lexTargetOtherIndicators_ae_eq_strict
+#print axioms StableMatchingsE2E.map_lexTargetOtherIndicators
+#print axioms StableMatchingsE2E.revealEntropyBudget_eq_uniform_pathBudget
+#print axioms StableMatchingsE2E.revealEntropyBudget_le_uniformPrefixWindowExpectation
+#print axioms StableMatchingsE2E.log_stableCount_le_priorityWindowExpectation
+#print axioms StableMatchingsE2E.log_stableCount_le_integral_priorityWindowCost

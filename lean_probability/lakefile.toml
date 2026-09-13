@@ -1,0 +1,6 @@
+name = "StableMatchingsProbability"
+version = "0.1.0"
+defaultTargets = ["StableMatchingsProbability"]
+
+[[lean_lib]]
+name = "StableMatchingsProbability"

@@ -1,0 +1,7 @@
+import StableMatchingsE2E.MarkerWindowBridge
+
+#print axioms StableMatchingsE2E.ownerMarkerBit_eq_true_iff
+#print axioms StableMatchingsE2E.left_truncatedWait_eq_boundary
+#print axioms StableMatchingsE2E.right_truncatedWait_eq_boundary
+#print axioms StableMatchingsE2E.nearest_window_width_eq_markerWindowWidth
+#print axioms StableMatchingsE2E.exact_conditional_support_length_le_markerWindowWidth
