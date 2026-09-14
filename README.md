@@ -21,7 +21,7 @@ The Gale-Shapley algorithm finds one stable matching efficiently. A single
 preference profile, however, may admit many stable matchings. Let
 
 $$
-SM(n)=\max_I |\operatorname{Stab}(I)|,
+SM(n)=\max_I |\mathrm{Stab}(I)|,
 $$
 
 where the maximum ranges over all strict, complete instances with $n$
@@ -56,10 +56,10 @@ A stable pair is a pair that occurs in at least one stable matching. If $m$ is
 the number of distinct stable pairs in an instance $I$, then
 
 $$
-\boxed{|\operatorname{Stab}(I)|^4\le 2^m,}
+\boxed{|\mathrm{Stab}(I)|^4\le 2^m,}
 $$
 
-or equivalently $|\operatorname{Stab}(I)|\le 2^{m/4}$. A refined version gives
+or equivalently $|\mathrm{Stab}(I)|\le 2^{m/4}$. A refined version gives
 an additional exponential penalty for rotations longer than two. The constant
 $2^{1/4}$ is optimal. Equality holds precisely when the rotation poset is an
 antichain of length-two rotations whose male participant pairs partition the
@@ -93,7 +93,7 @@ The participant-count proof retains this information through three steps.
 
    $$
    L_x+R_x-1,
-   \qquad L_x,R_x\stackrel{\mathrm{iid}}{\sim}\operatorname{Geom}(x).
+   \qquad L_x,R_x\stackrel{\mathrm{iid}}{\sim}\mathrm{Geom}(x).
    $$
 
    Thus a high-dimensional conditional choice set is reduced to a universal
