@@ -4,7 +4,7 @@ import StableMatchingsE2E.ProfileCode
 # Replication of stable-marriage profiles
 
 This file constructs a block product of identical strict complete profiles.
-Every agent ranks all partners in its own block before every partner outside
+Every participant ranks all partners in its own block before every partner outside
 that block.  Independent stable matchings in the blocks therefore give a
 stable matching of the product profile.
 -/
@@ -21,7 +21,7 @@ private def blockRankPerm {n t : Nat} [NeZero t]
   finProdFinEquiv.symm.trans
     ((Equiv.prodCongr (blockIndexPerm i) sigma).trans finProdFinEquiv)
 
-/-- The `t`-fold block product of `P`.  Inside its own block an agent uses
+/-- The `t`-fold block product of `P`.  Inside its own block a participant uses
 the preferences of `P`; every own-block partner precedes every outside-block
 partner. -/
 def replicatedProfile {n t : Nat} [NeZero t] (P : ProfileCode n) :

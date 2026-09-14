@@ -21,7 +21,7 @@ structure ProfileCode (n : Nat) where
 /-- A perfect matching is a permutation from men to women. -/
 abbrev MatchingCode (n : Nat) := Equiv.Perm (Fin n)
 
-/-- The canonical profile in which every agent ranks partners by their index. -/
+/-- The canonical profile in which every participant ranks partners by their index. -/
 def identityProfile (n : Nat) : ProfileCode n where
   manRank := fun _ => Equiv.refl _
   womanRank := fun _ => Equiv.refl _
