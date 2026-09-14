@@ -8,3 +8,11 @@ authors:
     affiliation: Nanyang Technological University
 repository-code: "https://github.com/xxxhhbb/counting-stable-matchings-lean"
 date-released: 2026-09-13
+preferred-citation:
+  type: article
+  title: "Counting Stable Matchings: One-Sided Entropy and Sharp Stable-Pair Bounds"
+  authors:
+    - family-names: Xu
+      given-names: Huibo
+      affiliation: Nanyang Technological University
+  year: 2026

@@ -6,6 +6,16 @@
 This repository contains the machine-checked Lean 4 development for two
 extremal counting results about strict, complete stable-marriage instances.
 
+## Paper
+
+The current public manuscript is available here:
+
+**[Counting Stable Matchings: One-Sided Entropy and Sharp Stable-Pair Bounds](paper/Counting-Stable-Matchings.pdf)**
+
+The PDF is the 32-page full version dated September 14, 2026. It identifies
+Huibo Xu, Nanyang Technological University, as the author. The LaTeX sources
+are not included in this repository.
+
 ## The problem and the result
 
 Let `SM(n)` be the largest number of stable matchings that a single instance
@@ -88,8 +98,8 @@ COUNTING_STABLE_MATCHINGS_LEAN_AUDIT_PASS
 
 ## Scope boundary
 
-This repository publishes the Lean formalization only; it does not contain the
-paper PDF or LaTeX sources. The penalized stable-pair theorem is checked using
+This repository publishes the paper PDF and the Lean formalization; it does
+not contain the LaTeX sources. The penalized stable-pair theorem is checked using
 an intrinsic irreducible-support excess parameter; identification with a
 separately presented classical rotation encoding is not claimed here. The
 external Popular Roommates algorithm and its full running-time transfer are
